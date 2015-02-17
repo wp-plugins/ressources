@@ -1,0 +1,16 @@
+.progress-container{
+    width:95%;
+    margin:0 auto;
+    height:12px;
+    border-radius:4px;
+    background:#FFF;
+    border:#EEE 1px inset;
+    position:relative;
+    box-shadow:#CCC 0px 0px 3px inset;
+}
+.progress-bar{
+    background:#0C3;
+    border:#3F5 1px outset;
+    border-radius:4px;
+    height:9px;
+}

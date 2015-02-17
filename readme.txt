@@ -1,38 +1,41 @@
 === Ressources ===
-Contributors: 8457, ecolosites
-Donate link: 
-Tags: server, linux, ressources, memory, monitoring
+Contributors: bastho, ecolosites
+Donate link:
+Tags: server, linux, ressources, memory, monitoring, load average, performances
 Requires at least: 3.3
-Tested up to: 3.4
+Tested up to: 4.1
 Stable tag: /trunk
-License: CC BY-NC 3.0
-License URI: http://creativecommons.org/licenses/by-nc/3.0/
+License: GPLv2
 
-Display the server ressources on the network dashboard
+Display the server ressources on in dashboard widgets
 
 == Description ==
 
-Display the server ressources on the network dashboard
-- size of the wp-content directory
-- available memory
-- space used on linux partitions
-- process running on the servers
+Works only for linux hosted sites !
+
+Displays for the super admin, the server ressources on the (network) dashboard
+
+* hostname and distro
+* size of the wp-content directory
+* available memory
+* space used on linux partitions
+* process running on the servers
 
 == Installation ==
 
-1. Upload `eelv_ressources` to the `/wp-content/plugins/` directory
-1. Activate the plugin through the 'Plugins' menu in WordPress network admin
-1. Go to the network admin dashboard``
+1. Upload `ressources` to the `/wp-content/plugins/` directory
+2. Activate the plugin through the 'Plugins' menu in WordPress network admin
+
 
 == Frequently asked questions ==
 
 = Does this plugin works on a windows server ? =
 
-No, this plugin only runs on linux servers. 
+No, this plugin only runs on linux servers.
 
 = Does this plugin works on all wordpress instances ? =
 
-No, this plugin only runs on multisites wordpress instances. 
+No, this plugin only runs on multisites wordpress instances.
 
 == Screenshots ==
 
@@ -41,12 +44,18 @@ No, this plugin only runs on multisites wordpress instances.
 
 == Changelog ==
 
-v 0.2 : 
-Add process view
+= 0.3 =
+* Add: Admin bar info: host name (useful for fallback)
+* Add: CPU load average
+* Add: Ajax refresh
+* Fix: code cleanup
 
-v 0.1
-Plugin creation : 
-use SSH commands via php exec() function to display the server ressources.
+= 0.2 =
+* Add process view
+
+= 0.1 =
+* Plugin creation :
+* use SSH commands via php exec() function to display the server ressources.
 
 == Upgrade notice ==
 
