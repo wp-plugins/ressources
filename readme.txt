@@ -26,7 +26,6 @@ Displays for the super admin, the server ressources on the (network) dashboard
 1. Upload `ressources` to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress network admin
 
-
 == Frequently asked questions ==
 
 = Does this plugin works on a windows server ? =
@@ -39,8 +38,7 @@ No, this plugin only runs on multisites wordpress instances.
 
 == Screenshots ==
 
-1. http://ecolosites.eelv.fr/files/2012/10/ressources.png
-2. http://ecolosites.eelv.fr/files/2012/10/process.png
+1. widgets
 
 == Changelog ==
 
