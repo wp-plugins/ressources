@@ -1,0 +1,98 @@
+# Copyright (C) 2015 Ressources
+# This file is distributed under the same license as the Ressources package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Ressources\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/ressources\n"
+"POT-Creation-Date: 2015-02-18 01:21+0100\n"
+"PO-Revision-Date: 2015-02-18 01:21+0100\n"
+"Last-Translator: Bastien Ho <bastienho@urbancube.fr>\n"
+"Language-Team: bastho <b@stienho.fr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: __;_e;_\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+
+#: ../ressources.php:36
+msgid "Technical informations"
+msgstr ""
+
+#: ../ressources.php:37 ../ressources.php:59
+msgid "Memory"
+msgstr ""
+
+#: ../ressources.php:38
+msgid "Disk usage"
+msgstr ""
+
+#: ../ressources.php:39
+msgid "Process"
+msgstr ""
+
+#: ../ressources.php:40 ../ressources.php:111
+msgid "CPU Load average"
+msgstr ""
+
+#: ../ressources.php:49
+#, php-format
+msgid "Blog: %s"
+msgstr ""
+
+#: ../ressources.php:50
+#, php-format
+msgid "On machine: %s"
+msgstr ""
+
+#: ../ressources.php:51
+#, php-format
+msgid "System: %s"
+msgstr ""
+
+#: ../ressources.php:60 ../ressources.php:77
+msgid "Size"
+msgstr ""
+
+#: ../ressources.php:61 ../ressources.php:78
+msgid "Used"
+msgstr ""
+
+#: ../ressources.php:62 ../ressources.php:79
+msgid "Use %"
+msgstr ""
+
+#: ../ressources.php:76
+msgid "Filesystem"
+msgstr ""
+
+#: ../ressources.php:93
+msgid "User"
+msgstr ""
+
+#: ../ressources.php:94
+msgid "%CPU"
+msgstr ""
+
+#: ../ressources.php:95
+msgid "%MEM"
+msgstr ""
+
+#: ../ressources.php:96 ../ressources.php:110
+msgid "TIME"
+msgstr ""
+
+#: ../ressources.php:97
+msgid "COMMAND"
+msgstr ""
+
+#: ../ressources.php:144
+msgid "space used by wp-content:"
+msgstr ""
+
+#: ../ressources.php:234
+#, php-format
+msgid "#%1$s on %2$s in %3$s s"
+msgstr ""

@@ -6,12 +6,16 @@
   Version: 0.3.0
   Author: bastho
   License: GPLv2
+  Domain Path: /languages/
  */
 $Ressources = new Ressources();
 
 class Ressources {
 
     function Ressources() {
+
+	load_plugin_textdomain( 'ressources', false, 'ressources/languages' );
+
 	$this->gb_to = microtime(true);
 	add_action('wp_network_dashboard_setup', array($this, 'dashboard_setup'));
 	add_action('wp_dashboard_setup', array($this, 'dashboard_setup'));
@@ -29,11 +33,11 @@ class Ressources {
 
     function dashboard_setup() {
 	if (is_super_admin()) {
-	    wp_add_dashboard_widget('ressources_machine', 'Technical informations', array($this, 'widget_machine'));
-	    wp_add_dashboard_widget('ressources_memory', 'Memory', array($this, 'widget_memory'));
-	    wp_add_dashboard_widget('ressources_disk', 'Disk usage', array($this, 'widget_disk'));
-	    wp_add_dashboard_widget('ressources_top', 'Process', array($this, 'widget_top'));
-	    wp_add_dashboard_widget('ressources_cpu', 'CPU Load average', array($this, 'widget_cpu'));
+	    wp_add_dashboard_widget('ressources_machine', __('Technical informations','ressources'), array($this, 'widget_machine'));
+	    wp_add_dashboard_widget('ressources_memory', __('Memory','ressources'), array($this, 'widget_memory'));
+	    wp_add_dashboard_widget('ressources_disk', __('Disk usage','ressources'), array($this, 'widget_disk'));
+	    wp_add_dashboard_widget('ressources_top', __('Process','ressources'), array($this, 'widget_top'));
+	    wp_add_dashboard_widget('ressources_cpu', __('CPU Load average','ressources'), array($this, 'widget_cpu'));
 	}
     }
     /*
@@ -52,10 +56,10 @@ class Ressources {
 	<table class="widefat sortable" style="margin-top: 1em;">
 	    <thead>
 		<tr>
-		    <th>Memory</th>
-		    <th>Size</th>
-		    <th>Used</th>
-		    <th>Use%</th>
+		    <th><?php _e('Memory','ressources') ?></th>
+		    <th><?php _e('Size','ressources') ?></th>
+		    <th><?php _e('Used','ressources') ?></th>
+		    <th><?php _e('Use %','ressources') ?></th>
 		</tr>
 	    </thead>
 	    <tbody class="ressources-widget-content" data-id="memory">
@@ -69,10 +73,10 @@ class Ressources {
 	<table class="widefat sortable" style="margin-top: 1em;">
 	    <thead>
 		<tr>
-		    <th>Filesystem</th>
-		    <th>Size</th>
-		    <th>Used</th>
-		    <th>Use%</th>
+		    <th><?php _e('Filesystem','ressources') ?></th>
+		    <th><?php _e('Size','ressources') ?></th>
+		    <th><?php _e('Used','ressources') ?></th>
+		    <th><?php _e('Use %','ressources') ?></th>
 		</tr>
 	    </thead>
 	    <tbody class="ressources-widget-content" data-id="disk">
@@ -86,11 +90,11 @@ class Ressources {
 	<table class="widefat sortable" style="margin-top: 1em;">
 	    <thead>
 		<tr>
-		    <th>USER</th>
-		    <th>%CPU</th>
-		    <th>%MEM</th>
-		    <th>TIME</th>
-		    <th>COMMAND</th>
+		    <th><?php _e('User','ressources') ?></th>
+		    <th><?php _e('%CPU','ressources') ?></th>
+		    <th><?php _e('%MEM','ressources') ?></th>
+		    <th><?php _e('TIME','ressources') ?></th>
+		    <th><?php _e('COMMAND','ressources') ?></th>
 		</tr>
 	    </thead>
 	    <tbody class="ressources-widget-content" data-id="top">
@@ -103,8 +107,8 @@ class Ressources {
 	<table class="widefat sortable" style="margin-top: 1em;">
 	    <thead>
 		<tr>
-		    <th>TIME</th>
-		    <th>%CPU LOAD AVERAGE</th>
+		    <th><?php _e('TIME','ressources') ?></th>
+		    <th><?php _e('CPU Load average','ressources') ?></th>
 		</tr>
 	    </thead>
 	    <tbody class="ressources-widget-content" data-id="cpu">
@@ -194,15 +198,15 @@ class Ressources {
 	    ?>
 	    <tr>
 		<td>1 MIN</td>
-		<td><?php echo  $load[0] ?>%</td>
+		<td><?php echo  $load[0] ?></td>
 	    </tr>
 	    <tr>
 		<td>5 MIN</td>
-		<td><?php echo  $load[1] ?>%</td>
+		<td><?php echo  $load[1] ?></td>
 	    </tr>
 	    <tr>
 		<td>15 MIN</td>
-		<td><?php echo  $load[2] ?>%</td>
+		<td><?php echo  $load[2] ?></td>
 	    </tr>
 	    <?php
 	}
@@ -227,7 +231,7 @@ class Ressources {
 		'title' => '<span class="ab-icon dashicons dashicons-flag"></span> <span class="ab-label">' . $hn . '</span>',
 		'href' => '#',
 		'meta' => array(
-		    'title' => sprintf(__('#%1$s on %2$s in %3$s ms',''),get_current_blog_id(),$hn,$dif),
+		    'title' => sprintf(__('#%1$s on %2$s in %3$s s',''),get_current_blog_id(),$hn,$dif),
 		    'class' => 'machine-' . $hn . ''
 		),
 	    ));

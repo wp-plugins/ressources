@@ -1,6 +1,5 @@
 === Ressources ===
 Contributors: bastho, ecolosites
-Donate link:
 Tags: server, linux, ressources, memory, monitoring, load average, performances
 Requires at least: 3.3
 Tested up to: 4.1
@@ -41,6 +40,10 @@ No, this plugin only runs on multisites wordpress instances.
 1. widgets
 
 == Changelog ==
+
+= 0.3.1 =
+* Better calculation of page loading duration
+* French localization
 
 = 0.3 =
 * Add: Admin bar info: host name (useful for fallback)
