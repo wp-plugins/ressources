@@ -12,7 +12,7 @@ Display the server ressources on in dashboard widgets
 
 Works only for linux hosted sites !
 
-Displays for the super admin, the server ressources on the (network) dashboard
+WordPress monitoring, displays for the super admin, the server ressources on the (network) dashboard
 
 * hostname and distro
 * size of the wp-content directory
@@ -33,7 +33,7 @@ No, this plugin only runs on linux servers.
 
 = Does this plugin works on all wordpress instances ? =
 
-No, this plugin only runs on multisites wordpress instances.
+Yes, both single and multisite. But only the superadmin can view the monitors.
 
 == Screenshots ==
 
