@@ -1,12 +1,12 @@
 === Ressources ===
 Contributors: bastho, ecolosites
-Tags: server, linux, ressources, memory, monitoring, load average, performances
+Tags: server, linux, resources, memory, monitoring, load average, performances
 Requires at least: 3.3
 Tested up to: 4.1
 Stable tag: /trunk
 License: GPLv2
 
-Display the server ressources on in dashboard widgets
+Monitoring the server resources with dashboard widgets
 
 == Description ==
 
