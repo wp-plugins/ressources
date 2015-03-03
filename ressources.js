@@ -1,5 +1,7 @@
+var ressources_refresh_delay = [];
 function resources_refresh_content(target){
     data_name = jQuery(target).data('id');
+    ressources_refresh_delay[data_name] = jQuery(target).data('refresh');
     if(jQuery('#ressources_'+data_name).hasClass('closed')){
         setTimeout(function(){resources_refresh_content(target);},2000);
         return;
@@ -10,12 +12,18 @@ function resources_refresh_content(target){
             datas:data_name
         },
         datasType:'html',
+        async:true,
         success:function(html){
             target.html(html);
-            setTimeout(function(){resources_refresh_content(target);},2000);
+            data_name = jQuery(target).data('id');
+            if(ressources_refresh_delay[data_name]>0){
+                setTimeout(function(){resources_refresh_content(target);},ressources_refresh_delay[data_name]*1000);
+            }
         },
         error:function(){
-            setTimeout(function(){resources_refresh_content(target);},60000);
+            if(ressources_refresh_delay[data_name]>0){
+                setTimeout(function(){resources_refresh_content(target);},ressources_refresh_delay[data_name]*10000);
+            }
         }
     });
 }

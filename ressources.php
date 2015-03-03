@@ -3,7 +3,7 @@
   Plugin Name: Ressources
   Plugin URI: http://ecolosites.eelv.fr
   Description:  Display the server ressources on the dashboard
-  Version: 0.3.1
+  Version: 0.3.2
   Author: bastho
   License: GPLv2
   Domain Path: /languages/
@@ -46,9 +46,11 @@ class Ressources {
     function widget_machine() {
 	exec('cat /etc/issue',$system);
 	?>
-	<p><?php printf(__('Blog: %s','ressources'),'<b>#'.get_current_blog_id().'</b>') ?></p>
-	<p><?php printf(__('On machine: %s','ressources'),'<b>'.gethostname().'</b>') ?></b></p>
+	<p class=twice"><?php printf(__('Blog: %s','ressources'),'<b>#'.get_current_blog_id().'</b>') ?></p>
+	<p class=twice"><?php printf(__('On machine: %s','ressources'),'<b>'.gethostname().'</b>') ?></b></p>
 	<p><?php printf(__('System: %s','ressources'),'<b>'.str_replace('\n \l','',$system[0]).'</b>') ?></p>
+	<p><?php printf(__('Web server: %s, PHP %s','ressources'),'<b>'.$_SERVER['SERVER_SOFTWARE'].'</b>','<b>'.phpversion().'</b>') ?></p>
+	<p><?php printf(__('SQL version: %s','ressources'),'<b>'.$this->getMySQLVersion().'</b>') ?></p>
 	<?php
     }
     function widget_memory() {
@@ -62,7 +64,7 @@ class Ressources {
 		    <th><?php _e('Use %','ressources') ?></th>
 		</tr>
 	    </thead>
-	    <tbody class="ressources-widget-content" data-id="memory">
+	    <tbody class="ressources-widget-content" data-id="memory" data-refresh="5">
 	    </tbody>
 	</table>
     <?php
@@ -79,7 +81,7 @@ class Ressources {
 		    <th><?php _e('Use %','ressources') ?></th>
 		</tr>
 	    </thead>
-	    <tbody class="ressources-widget-content" data-id="disk">
+	    <tbody class="ressources-widget-content" data-id="disk" data-refresh="0">
 	    </tbody>
 	</table>
     <?php
@@ -97,7 +99,7 @@ class Ressources {
 		    <th><?php _e('COMMAND','ressources') ?></th>
 		</tr>
 	    </thead>
-	    <tbody class="ressources-widget-content" data-id="top">
+	    <tbody class="ressources-widget-content" data-id="top" data-refresh="5">
 	    </tbody>
 	</table>
 	<?php
@@ -111,7 +113,7 @@ class Ressources {
 		    <th><?php _e('CPU Load average','ressources') ?></th>
 		</tr>
 	    </thead>
-	    <tbody class="ressources-widget-content" data-id="cpu">
+	    <tbody class="ressources-widget-content" data-id="cpu" data-refresh="20">
 	    </tbody>
 	</table>
 	<?php
@@ -211,6 +213,11 @@ class Ressources {
 	    <?php
 	}
     }
+    function getMySQLVersion() {
+	$output = shell_exec('mysql -V');
+	preg_match('@[0-9]+\.[0-9]+\.[0-9]+@', $output, $version);
+	return $version[0];
+    }
     function ajax(){
 	$datas = \filter_input(INPUT_GET, 'datas');
 	if(method_exists($this, 'content_'.$datas)){
@@ -231,7 +238,7 @@ class Ressources {
 		'title' => '<span class="ab-icon dashicons dashicons-flag"></span> <span class="ab-label">' . $hn . '</span>',
 		'href' => '#',
 		'meta' => array(
-		    'title' => sprintf(__('#%1$s on %2$s in %3$s s',''),get_current_blog_id(),$hn,$dif),
+		    'title' => sprintf(__('#%1$s on %2$s in %3$s s','ressources'),get_current_blog_id(),$hn,$dif),
 		    'class' => 'machine-' . $hn . ''
 		),
 	    ));

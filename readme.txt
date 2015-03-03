@@ -33,13 +33,17 @@ No, this plugin only runs on linux servers.
 
 = Does this plugin works on all wordpress instances ? =
 
-Yes, both single and multisite. But only the superadmin can view the monitors.
+Yes, both single nad multisite. But only the superadmin can view the monitors.
 
 == Screenshots ==
 
 1. widgets
 
 == Changelog ==
+
+= 0.4.0 =
+* Add server informations: PHP verion, SQL version
+* Optimize performances by introducing different refresh delays
 
 = 0.3.1 =
 * Better calculation of page loading duration

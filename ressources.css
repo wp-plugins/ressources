@@ -14,3 +14,12 @@
     border-radius:4px;
     height:9px;
 }
+#ressources_machine p{
+    clear:both;
+    float:none;
+}
+#ressources_machine p.twice{
+    display:block;
+    float:left;
+    width:49%;
+}
