@@ -3,7 +3,7 @@
   Plugin Name: Ressources
   Plugin URI: http://ecolosites.eelv.fr
   Description:  Display the server ressources on the dashboard
-  Version: 0.3.2
+  Version: 0.4.0
   Author: bastho
   License: GPLv2
   Domain Path: /languages/

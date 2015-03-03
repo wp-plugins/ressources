@@ -10,7 +10,7 @@ Monitoring the server resources with dashboard widgets
 
 == Description ==
 
-Works only for linux hosted sites !
+Not tested on non linux hosted sites !
 
 WordPress monitoring, displays for the super admin, the server ressources on the (network) dashboard
 
