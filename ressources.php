@@ -3,7 +3,7 @@
   Plugin Name: Ressources
   Plugin URI: http://ecolosites.eelv.fr
   Description:  Display the server ressources on the dashboard
-  Version: 0.4.0
+  Version: 0.4.1
   Author: bastho
   License: GPLv2
   Domain Path: /languages/
@@ -12,7 +12,7 @@ $Ressources = new Ressources();
 
 class Ressources {
 
-    function Ressources() {
+    function __construct() {
 
 	load_plugin_textdomain( 'ressources', false, 'ressources/languages' );
 
@@ -22,6 +22,10 @@ class Ressources {
 	add_action('admin_bar_menu', array($this, 'adminbar'), 100);
 	add_action('admin_enqueue_scripts', array($this, 'scripts'));
 	add_action('wp_ajax_ressources_widget_content', array($this, 'ajax'));
+    }
+    // PHP4
+    public function Ressources(){
+        $this->__construct();
     }
     function scripts($hook){
 	if('index.php'!==$hook){

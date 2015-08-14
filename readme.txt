@@ -41,6 +41,9 @@ Yes, both single nad multisite. But only the superadmin can view the monitors.
 
 == Changelog ==
 
+= 0.4.1 =
+* WP 4.3 compliant
+
 = 0.4.0 =
 * Add server informations: PHP verion, SQL version
 * Optimize performances by introducing different refresh delays
